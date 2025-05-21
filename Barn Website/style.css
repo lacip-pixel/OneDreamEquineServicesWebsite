@@ -1,0 +1,764 @@
+:root {
+    --body-bg: #7d7f80;         /* Sage Gray */
+    --header-dark: #1d1230;     /* Deep Plum */
+    --text-main: #f4f1ed;       /* Cream */
+    --accent-blue: #80a6bb;     /* Sky Blue */
+    --accent-blue-light: #aec9d2; /* Light Sky Blue */
+}
+html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+/* GENERAL BODY */
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background-color: var(--body-bg);
+    color: var(--text-main);
+}
+
+/* HEADER */
+header {
+    background-color: var(--header-dark);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+}
+
+.calendar-header {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;  /* spacing between the images and title */
+}
+
+.horse-icon {
+    height: 50px;
+}
+
+.flipped {
+    transform: scaleX(-1);
+}
+
+.calendar-title {
+    font-family: 'Merriweather', serif;
+    font-size: 2rem;
+    color: var(--header-dark);
+    margin: 0;  /* removes default h2 margin */
+}
+
+.event-title {
+    font-family: 'Merriweather', serif;  /* Or whatever you used for headings */
+    color: var(--header-dark);  /* Deep Plum */
+    text-align: center;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+}
+
+.event-link {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.event-link a {
+    font-family: 'Segoe UI', sans-serif;
+    font-size: 1.2rem;
+    text-decoration: none;
+    color: var(--accent-blue);  /* Your Sky Blue */
+    border: 2px solid var(--accent-blue-light);
+    padding: 10px 20px;
+    border-radius: 6px;
+    background-color: var(--cream);
+    transition: 0.3s;
+}
+
+.event-link a:hover {
+    background-color: var(--header-dark);
+    color: var(--text-main);
+}
+
+.logo {
+    font-size: 1.8rem;
+    font-family: 'Brush Script MT', cursive;
+    color: var(--accent-blue);
+}
+.logo img,
+.logo-img {
+    max-height: 60px;  /* Adjust size here */
+    height: auto;
+    width: auto;
+    right:100%;
+}
+
+/* NAVIGATION */
+.main-nav {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;   /* Pushes nav to the right */
+    margin-top: -80px;   /* Adjust this as needed to align with the header */
+    padding-bottom: 15px;
+    gap: 1.5rem;
+    background-color: var(--header-dark);
+    font-family: Arial, sans-serif;
+}
+
+.main-nav a, .dropbtn {
+    font-size: 16px;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    background-color: inherit;
+    border: none;
+    cursor: pointer;
+    position: relative;
+    /* REMOVE float */
+}
+
+.main-nav a:hover, .dropdown:hover .dropbtn {
+    background-color: #513679;
+}
+
+.main-nav a {
+    text-decoration: none;
+    font-weight: 500;
+    color: var(--text-main);
+}
+
+/* Dropdown container */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+/* Dropdown content */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    left: 0;
+    top: 100%;
+    background-color: #513679;
+    min-width: 180px;
+    box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    display: block;
+    color: white;
+    padding: 12px 16px;
+    text-decoration: none;
+    text-align: left;
+    background-color: var(--header-dark);
+}
+
+.dropdown-content a:hover {
+    background-color: #513679;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* HERO BANNER */
+.hero {
+    background: url('images/barnbackground.jpg') repeat-x center;
+    height: 60vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-main);
+    text-shadow: 2px 2px 8px var(--header-dark);
+}
+
+.hero h4 {
+    font-size: 2rem;
+}
+
+/* BARN BACKGROUND ALTERNATIVE */
+.barn {
+    background: url('images/barnbackground.jpg') center center repeat;
+    background-size: contain;
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-main);
+}
+.contact-page {
+  background-color: var(--body-bg); /* Sage Gray */
+  color: var(--text-main);          /* Cream */
+  padding: 3rem 1rem;
+  max-width: 1200px;
+  margin: auto;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.contact-page h2 {
+  text-align: center;
+  font-size: 2.75rem;
+  margin-bottom: 0.5rem;
+  color: var(--text-main);
+}
+
+.contact-page p {
+  text-align: center;
+  margin-bottom: 2.5rem;
+  font-size: 1.1rem;
+  color: var(--text-main);
+}
+
+.contact-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+}
+
+.contact-form,
+.contact-details {
+  flex: 1 1 400px;
+  min-width: 320px;
+}
+
+.contact-form label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  color: var(--text-main);
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid var(--accent-blue-light);
+  border-radius: 6px;
+  margin-bottom: 1rem;
+  font-size: 1rem;
+  background: #ffffff;
+  color: #333;
+}
+
+.contact-form button {
+  background-color: var(--accent-blue); /* Sky Blue */
+  color: var(--text-main);
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.contact-form button:hover {
+  background-color: var(--accent-blue-light); /* Light Sky Blue */
+}
+
+.contact-details h3 {
+  font-size: 1.4rem;
+  margin-bottom: 0.5rem;
+  color: var(--text-main);
+   text-align: center;
+  align-items: center;
+}
+
+.contact-details p, .contact-details a {
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+  color: var(--text-main);
+  text-decoration: none;
+}
+
+.contact-details a:hover {
+  text-decoration: underline;
+}
+
+.contact-details iframe {
+  margin-top: 1rem;
+  width: 100%;
+  height: 200px;
+  border: 1px solid var(--accent-blue-light);
+  border-radius: 6px;
+}
+
+
+/* SECTION BASE */
+.section {
+    padding: 3rem 1.5rem;
+    max-width: 1000px;
+    margin: auto;
+    background-color: var(--body-bg);
+    position: relative;
+    color: var(--text-main);
+}
+
+.about {
+    background-color: var(--accent-blue-light); /* soft pale blue */
+    color: var(--header-dark);
+    text-align: center;
+    padding: 5rem 2rem;
+    width: 100vw;        /* Full width of viewport */
+    margin: 0;           /* Remove auto margins */
+    box-sizing: border-box;
+    max-width: none;     /* Disable any inherited max-width */
+}
+
+
+.about h3 {
+    font-size: 2.8rem;
+    letter-spacing: 2px;
+    font-family: Georgia, serif;
+    color: var(--header-dark); 
+    margin-bottom: 0.5rem;
+    -webkit-text-stroke: 0; /* remove stroke */
+}
+
+.about p {
+    font-style: italic;
+    font-size: 1.3rem;
+    line-height: 1.8;
+    margin-bottom: 2rem;
+    color: var(--header-dark);
+}
+
+
+.underline {
+    width: 80px;
+    height: 4px;
+    background-color: var(--header-dark);
+    margin: 0.5rem auto 2rem auto;
+    border-radius: 5px;
+}
+
+.about p {
+    font-style: italic;
+    font-size: 1.3rem;
+    line-height: 1.8;
+    margin-bottom: 2rem;
+}
+
+/* ABOUT & SERVICES IMAGES */
+.about, .services {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+.about img, .services img {
+    width: 100%;
+    max-width: 450px;
+    border-radius: 12px;
+}
+
+.about-text, .service-text {
+    flex: 1;
+    min-width: 250px;
+}
+
+/* ROPE DIVIDER */
+.rope-divider {
+    width: 100%;
+    height: 20px;
+    background: url('images/rope.png') repeat-x center;
+    background-size: contain;
+}
+
+/* CAROUSEL */
+.carousel-container {
+    overflow-x: auto;
+    white-space: nowrap;
+    width: 100%;
+    background-color: var(--body-bg);
+}
+
+.carousel-track {
+    display: flex;
+    width: fit-content;
+}
+
+.carousel-track img {
+    width: 100vw;
+    height: 60vh;
+    object-fit: contain;
+    object-position: center top;
+    flex-shrink: 0;
+    scroll-snap-align: start;
+}
+
+.carousel-container::-webkit-scrollbar {
+    display: none;
+}
+
+/* CONTACT SECTION */
+.contact {
+    background-color: var(--body-bg);
+    text-align: center;
+    padding: 2rem 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 40vh;
+}
+
+.contact-content {
+    max-width: 500px;
+    margin: auto;
+    padding: 1rem;
+    text-align: center;
+    word-wrap: break-word;  /* Allow long words (like email) to wrap */
+}
+
+.contact-content p {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+    word-break: break-word; /* Important for emails/addresses on mobile */
+}
+
+.social-icons {
+    margin-top: 0.8rem;
+    display: flex;
+    justify-content: center;
+    gap: 1.2rem;
+}
+
+
+.social-icons a:hover {
+    color: var(--accent-blue);
+}
+
+.contact .quote {
+    font-style: italic;
+    font-size: 1.4rem;
+    color: var(--text-main);
+    margin-bottom: 0.8rem;
+}
+
+.contact h3 {
+    font-size: 1.5rem;
+    font-family: Georgia, serif;
+    color: var(--header-dark);
+}
+
+.contact .owner,
+.contact .email,
+.contact .phone,
+.contact .location,
+.contact .hours {
+    font-size: 1rem;
+    color: var(--text-main);
+    margin-bottom: 0.2rem;
+}
+
+.social-icons {
+    margin-top: 0.8rem;
+}
+
+.social-icons a {
+    margin: 0 6px;
+    font-size: 1.6rem;
+    color: var(--header-dark);
+    transition: color 0.3s;
+}
+
+.social-icons a:hover {
+    color: var(--accent-blue);
+}
+
+.hero-horse-banner {
+    background: url('images/barn.jpg') no-repeat center center;
+    background-size: cover;
+    padding: 4rem 1rem;
+    text-align: center;
+    position: relative;
+    width: 100%;
+    box-sizing: border-box;
+
+    min-height: 60vh;
+}
+
+.hero-horse-banner::before {
+    content: "";
+    position: absolute;
+    top: 0; 
+    left: 0; 
+    right: 0; 
+    bottom: 0;
+    background-color: rgba(255, 255, 255, 0.5); /* overlay for text readability */
+    z-index: 1;
+}
+
+.hero-horse-banner-content {
+    position: relative;
+    z-index: 2;
+}
+
+.hero-horse-logo {
+    max-width: 300px;
+    width: 80%;
+    height: auto;
+    margin-bottom: 1rem;
+}
+
+.hero-horse-tagline {
+    font-size: 1.4rem;
+    color: #1d1230; /* deep plum for contrast */
+    font-style: italic;
+    margin-top: 0.5rem;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.4);
+}
+
+
+/* CONTACT HORSE BANNER (small one that says the name with two horse icons) */
+.contact .horse-banner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 0.5rem;
+}
+
+.contact .horse-banner h3 {
+    font-size: 2.2rem;
+    font-family: 'Brush Script MT', cursive;
+    color: var(--header-dark);
+    margin: 0;
+}
+
+.contact .horse-icon {
+    width: 40px;
+    height: auto;
+}
+
+.contact .flipped {
+    transform: scaleX(-1);
+}
+/* ABOUT GALLERY */
+.about-gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);  /* Always 3 columns on large screens */
+    gap: 1.5rem;
+    margin-top: 2rem;
+    justify-items: center;
+    justify-content: center;  /* THIS centers the grid itself */
+
+}
+
+.about-gallery img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    transition: transform 0.3s ease;
+}
+
+.about-gallery img:hover {
+    transform: scale(1.05);
+}
+
+/* Responsive adjustment for tablets and phones */
+@media screen and (max-width: 900px) {
+    .about-gallery {
+        grid-template-columns: repeat(2, 1fr);  /* 2 columns on medium screens */
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .about-gallery {
+        grid-template-columns: 1fr;  /* 1 column on small screens */
+    }
+}
+
+
+
+/* FOOTER */
+.footer {
+    background-color: var(--header-dark);
+    color: var(--text-main);
+    text-align: center;
+    padding: 1rem;
+    font-size: 0.9rem;
+}
+.footer-nav {
+    display: flex;
+    flex-wrap: wrap; /* Wraps to multiple lines if needed */
+    justify-content: center;
+    gap: 0.8rem 1.5rem; /* Row gap smaller than column gap */
+    margin-bottom: 0.5rem;
+    text-align: center;
+}
+
+.footer-nav a {
+    text-decoration: none;
+    color: var(--text-main);
+    font-size: 0.9rem;
+    font-weight: 400;
+    letter-spacing: 0.5px;
+}
+
+.footer-nav a:hover {
+    color: var(--accent-blue-light);
+}
+
+
+
+.footer p {
+    margin-top: 0.5rem;
+    font-size: 0.8rem;
+}
+/* HAMBURGER MENU STYLES */
+
+.hamburger {
+    display: none;
+    font-size: 26px;
+    color: white;
+    cursor: pointer;
+    padding: 14px 16px;
+    padding-right: 50px;  
+}
+
+/* MOBILE STYLES */
+@media screen and (max-width: 600px) {
+
+    /* Hamburger shows */
+    .hamburger {
+        display: block;
+    }
+
+    /* Main nav becomes hidden initially */
+    .main-nav {
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        background-color: var(--header-dark);
+        gap: 1rem;
+        padding: 1rem 0;
+        text-align: center;
+    }
+
+    /* When hamburger is clicked, menu opens vertically */
+    .main-nav.mobile-menu-open {
+        display: flex;
+    }
+
+    .main-nav a, .dropbtn {
+        width: 100%;
+        padding: 12px 0;
+        font-size: 18px;
+    }
+
+    /* Make dropdowns stack vertically on mobile */
+    .dropdown-content {
+        position: static !important;
+        width: 100% !important;
+        box-shadow: none !important;
+    }
+
+    /* Fix logo sizing */
+    .logo-img {
+        max-width: 80%;
+        height: auto;
+    }
+
+    /* Adjust footer for mobile */
+    .footer-nav {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    .footer-nav a {
+        width: 100%;
+        text-align: center;
+        word-break: break-word;
+    }
+
+    /* Adjust social icons if needed */
+    .social-icons {
+        gap: 1.5rem;
+        flex-wrap: wrap;
+    }
+
+    /* Contact section text wrapping */
+    .contact-content p {
+        overflow-wrap: break-word;
+        white-space: normal;
+        font-size: 1rem;
+    }
+}
+
+    
+
+    
+
+
+/* ====================================== */
+/* ========== RESPONSIVE DESIGN ========= */
+/* ====================================== */
+
+/* For tablets (under 900px wide) */
+@media screen and (max-width: 1160px) {
+
+       /* Hamburger shows */
+       .hamburger {
+        display: block;
+    }
+
+    /* Main nav becomes hidden initially */
+    .main-nav {
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        background-color: var(--header-dark);
+        gap: 1rem;
+        padding: 1rem 0;
+        text-align: center;
+    }
+
+    /* When hamburger is clicked, menu opens vertically */
+    .main-nav.mobile-menu-open {
+        display: flex;
+    }
+
+    .main-nav a, .dropbtn {
+        width: 100%;
+        padding: 12px 0;
+        font-size: 18px;
+    }
+
+    /* Make dropdowns stack vertically on mobile */
+    .dropdown-content {
+        position: static !important;
+        width: 100% !important;
+        box-shadow: none !important;
+    }
+
+    .about-gallery {
+        grid-template-columns: repeat(2, 1fr); /* Two columns */
+    }
+
+    .about-content h3 {
+        font-size: 2.2rem;
+    }
+
+    .about-content p {
+        font-size: 1.1rem;
+    }
+
+    .hero-horse-tagline {
+        font-size: 1.2rem;
+    }
+
+    nav a, .dropbtn {
+        padding: 12px 14px;
+    }
+}
+
+
+

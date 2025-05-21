@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>One Dream Equine Services</title>
+  <link rel="stylesheet" href="style.css">
+
+  <script>
+    function toggleMenu() {
+      const nav = document.querySelector('nav');
+      nav.classList.toggle('mobile-menu-open');
+    }
+  </script>
+
+  <style>
+    /* Quick mobile fix for the iframe */
+    iframe {
+      max-width: 100%;
+      height: auto;
+    }
+  </style>
+</head>
+
+<body style="background-color: white;">
+
+  <div class="barn"></div>
+
+  <header>
+    <div class="logo">
+      <img src="images/logo.png" alt="One Dream Equine Services Logo" class="logo-img">
+    </div>
+    <div class="hamburger" onclick="toggleMenu()">&#9776;</div>
+  </header>
+
+  <nav class="main-nav">
+    <a href="/home.html">Home</a>
+    <a href="/about.html">About</a>
+
+    <div class="dropdown">
+      <a href="#" class="dropbtn">Sales &#9662;</a>
+      <div class="dropdown-content">
+        <a href="/offers.html">Sale Offerings</a>
+        <a href="/recentsales.html">Recent Sales</a>
+      </div>
+    </div>
+
+    <div class="dropdown">
+      <a href="#" class="dropbtn">Horses &#9662;</a>
+      <div class="dropdown-content">
+        <a href="/stallions.html">Stallions</a>
+        <a href="/mares.html">Mares</a>
+        <a href="/foals.html">Foals</a>
+      </div>
+    </div>
+
+    <a href="/calandar.html">Calendar</a>
+    <a href="/reviews.html">Reviews</a>
+    <a href="/contact.html">Contact Us</a>
+  </nav>
+
+  <div class="barn"></div>
+  <div class="calendar-header">
+    <img src="images/bluehorse.png" alt="Horse Left" class="horse-icon">
+    <h2 class="calendar-title">Our Calendar</h2>
+    <img src="images/bluehorse.png" alt="Horse Right" class="horse-icon flipped">
+  </div>
+  
+  <iframe src="https://calendar.google.com/calendar/embed?src=b370a4400b77379d24214c1082ed0304bb849ea5479d5304d608d27a09cbcb2c%40group.calendar.google.com&ctz=America%2FNew_York"
+          style="border: 0; width: 100%; min-height: 600px;" 
+          frameborder="0" 
+          scrolling="no">
+  </iframe>
+  <div class="barn"></div>
+  <h2 class="event-title">A List of Our Events</h2>
+<p class="event-link">
+  <a href="docs/OneDream_EventList.pdf" target="_blank">📄 Click here to view the full Event List in a new tab</a>
+</p>
+
+  <div class="barn"></div>
+
+  <footer class="footer">
+    <nav class="footer-nav">
+      <a href="/home.html">Home</a> 
+      <a href="/about.html">About</a> 
+      <a href="/offers.html">Sale Offerings</a> 
+      <a href="/recentsales.html">Recent Sales</a> 
+      <a href="/stallions.html">Stallions</a> 
+      <a href="/mares.html">Mares</a> 
+      <a href="/foals.html">Foals</a> 
+      <a href="/calandar.html">Calendar</a> 
+      <a href="/reviews.html">Reviews</a> 
+      <a href="/contact.html">Contact</a>
+    </nav>
+    <p class="copyright">
+      &copy; 2025 One Dream Equine Services. All rights reserved.
+    </p>
+  </footer>
+
+</bo
