@@ -5,13 +5,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Boarding Contract</title>
   <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/png" href="images/favicon.png">
 </head>
 <script>
-    function toggleMenu() {
-        const nav = document.querySelector('nav');
-        nav.classList.toggle('mobile-menu-open');
-    }
-    </script>
+  function toggleMenu() {
+    const nav = document.querySelector('nav');
+    nav.classList.toggle('mobile-menu-open');
+  }
+</script>
 <body>
 
   <div class="barn"></div>
@@ -21,74 +22,67 @@
       <img src="images/logo.png" alt="One Dream Equine Services Logo" class="logo-img">
     </div>
     <div class="hamburger" onclick="toggleMenu()">&#9776;</div>
-
-    
   </header>
+
   <nav class="main-nav">
+    <a href="home.html">Home</a>
+    <a href="about.html">About</a>
 
-  <a href="home.html">Home</a>
-  <a href="about.html">About</a>
-
-  <div class="dropdown">
-    <a href="#" class="dropbtn">Sales &#9662;</a>
-    <div class="dropdown-content">
-      <a href="offers.html">Sale Offerings</a>
-      <a href="recentsales.html">Recent Sales</a>
+    <div class="dropdown">
+      <a href="#" class="dropbtn">Sales &#9662;</a>
+      <div class="dropdown-content">
+        <a href="offers.html">Sale Offerings</a>
+        <a href="recentsales.html">Recent Sales</a>
+      </div>
     </div>
-  </div>
 
-  <div class="dropdown">
-    <a href="#" class="dropbtn">Horses &#9662;</a>
-    <div class="dropdown-content">
-      <a href="stallions.html">Stallions</a>
-      <a href="mares.html">Mares</a>
-      <a href="foals.html">Foals</a>
+    <div class="dropdown">
+      <a href="#" class="dropbtn">Horses &#9662;</a>
+      <div class="dropdown-content">
+        <a href="stallions.html">Stallions</a>
+        <a href="mares.html">Mares</a>
+        <a href="foals.html">Foals</a>
+      </div>
     </div>
-  </div>
 
-  <a href="boarding.html">Boarding</a>
+    <a href="boarding.html">Boarding</a>
+    <a href="calander.html">Calendar</a>
+    <a href="reviews.html">Reviews</a>
+    <a href="contact.html">Contact Us</a>
+  </nav>
 
-  <a href="calander.html">Calendar</a>
-  <a href="reviews.html">Reviews</a>
-  <a href="contact.html">Contact Us</a>
-
-</nav>
   <div class="barn"></div>
- <!-- Boarding Section -->
-<body>
- <section class="contact-page">
-  <h2>Boarding Request</h2>
-  <p>Please complete this form to begin your boarding request. We’ll get in touch shortly.</p>
 
-  <div class="form-wrapper">
-    <form name="boarding-request" method="POST" data-netlify="true" class="contact-form">
-      <input type="hidden" name="form-name" value="boarding-request">
-      <input type="hidden" name="_redirect" value="/thankyou.html">
+  <!-- Boarding Section -->
+  <section class="contact-page">
+    <h2>Boarding Request</h2>
+    <p>Please complete this form to begin your boarding request. We’ll get in touch shortly.</p>
 
+    <div class="form-wrapper">
+      <form action="https://formsubmit.co/onedreamequine@gmail.com" method="POST" class="contact-form">
+        <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" name="_next" value="https://onedreamequineservices.com/thankyou.html">
 
-      <label for="name">Your Name</label>
-      <input type="text" id="name" name="Name" required>
+        <label for="name">Your Name</label>
+        <input type="text" id="name" name="Name" required>
 
-      <label for="email">Your Email</label>
-      <input type="email" id="email" name="Email" required>
+        <label for="email">Your Email</label>
+        <input type="email" id="email" name="Email" required>
 
-      <label for="horse">Horse's Name</label>
-      <input type="text" id="horse" name="Horse Name" required>
+        <label for="horse">Horse's Name</label>
+        <input type="text" id="horse" name="Horse Name" required>
 
-      <label for="start">Preferred Start Date</label>
-      <input type="date" id="start" name="Start Date">
+        <label for="start">Preferred Start Date</label>
+        <input type="date" id="start" name="Start Date">
 
-      <label for="notes">Additional Notes</label>
-      <textarea id="notes" name="Notes" rows="4" placeholder="Anything else we should know?"></textarea>
+        <label for="notes">Additional Notes</label>
+        <textarea id="notes" name="Notes" rows="4" placeholder="Anything else we should know?"></textarea>
 
-      <button type="submit">Send Request</button>
-    </form>
-  </div>
-</section>
+        <button type="submit">Send Request</button>
+      </form>
+    </div>
+  </section>
 
-  
-</body>
-</html>
   <div class="barn"></div>
 
   <footer class="footer">
@@ -100,8 +94,7 @@
       <a href="stallions.html">Stallions</a> 
       <a href="mares.html">Mares</a> 
       <a href="foals.html">Foals</a> 
-        <a href="boarding.html">Boarding</a>
-
+      <a href="boarding.html">Boarding</a>
       <a href="calander.html">Calendar</a> 
       <a href="reviews.html">Reviews</a> 
       <a href="contact.html">Contact</a>
@@ -111,4 +104,5 @@
     </p>
   </footer>
 
-</body></html>
+</body>
+</html>

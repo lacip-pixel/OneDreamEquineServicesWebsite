@@ -142,12 +142,12 @@ header {
     font-family: 'Segoe UI', sans-serif;
     font-size: 1.2rem;
     text-decoration: none;
-    color: white;  /* Your Sky Blue */
     border: 2px solid var(--header-dark);
     padding: 10px 20px;
     border-radius: 6px;
-    background-color: var(--cream);
     transition: 0.3s;
+        color: black; /* Added this line */
+
 }
 
 .event-link a:hover {
@@ -306,7 +306,7 @@ header {
   text-align: center;
   font-size: 2.75rem;
   margin-bottom: 0.5rem;
-  color: var(--cream);
+  color: black;
 }
 
 .contact-page p {
@@ -333,7 +333,7 @@ header {
   display: block;
   margin-bottom: 0.5rem;
   font-weight: 600;
-  color: var(--header-dark);
+  color: black;
 }
 
 .contact-form input,
@@ -378,7 +378,7 @@ background-color: #016b8e;
 .contact-details h3 {
   font-size: 1.4rem;
   margin-bottom: 0.5rem;
-  color: var(--header-dark);
+  color: black;
    text-align: center;
   align-items: center;
 }
@@ -386,7 +386,7 @@ background-color: #016b8e;
 .contact-details p, .contact-details a {
   margin-bottom: 0.5rem;
   font-size: 1rem;
-  color: var(--header-dark);
+  color: black;
   text-decoration: none;
 }
 
