@@ -56,26 +56,27 @@
   <div class="barn"></div>
  <!-- Boarding Section -->
 <body>
-  <section class="contact-page">
-    <h2>Boarding Contract</h2>
-    <p>Please complete this form to begin your boarding request. We’ll get in touch shortly.</p>
-  <div class="form-wrapper">
+ <section class="contact-page">
+  <h2>Boarding Request</h2>
+  <p>Please complete this form to begin your boarding request. We’ll get in touch shortly.</p>
 
-    <form class="contact-form" action="mailto:onedreamequine@gmail.com" method="post" enctype="text/plain">
+  <div class="form-wrapper">
+    <form name="boarding-request" method="POST" data-netlify="true" class="contact-form">
+      <input type="hidden" name="form-name" value="boarding-request">
+      <input type="hidden" name="_redirect" value="/thankyou.html">
+
+
       <label for="name">Your Name</label>
-      <input type="text" id="name" name="Name" required />
+      <input type="text" id="name" name="Name" required>
 
       <label for="email">Your Email</label>
-      <input type="email" id="email" name="Email" required />
+      <input type="email" id="email" name="Email" required>
 
       <label for="horse">Horse's Name</label>
-      <input type="text" id="horse" name="Horse Name" required />
+      <input type="text" id="horse" name="Horse Name" required>
 
       <label for="start">Preferred Start Date</label>
-      <input type="date" id="start" name="Start Date" />
-
-      <label for="services">Boarding Type (Full, Partial, Pasture)</label>
-      <input type="text" id="services" name="Boarding Type" placeholder="Full / Partial / Pasture" />
+      <input type="date" id="start" name="Start Date">
 
       <label for="notes">Additional Notes</label>
       <textarea id="notes" name="Notes" rows="4" placeholder="Anything else we should know?"></textarea>
@@ -83,7 +84,8 @@
       <button type="submit">Send Request</button>
     </form>
   </div>
-  </section>
+</section>
+
   
 </body>
 </html>

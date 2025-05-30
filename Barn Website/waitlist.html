@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>One Dream Equine Services</title>
+  <title>Boarding Contract</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <script>
@@ -54,36 +54,36 @@
 
 </nav>
   <div class="barn"></div>
+ <!-- Boarding Section -->
+<body>
   <section class="contact-page">
-  <h2>Contact Us</h2>
-  <p>We’d love to hear from you! Send us a message or stop by the barn.</p>
+    <h2>Boarding Waitlist Request</h2>
+    <p>Please complete this form to begin your boarding request. We’ll get in touch shortly.</p>
+  <div class="form-wrapper">
 
-  <div class="contact-container">
-    <form class="contact-form">
-      <label for="name">Name</label>
-      <input type="text" id="name" name="name" required>
+    <form class="contact-form" action="mailto:onedreamequine@gmail.com" method="post" enctype="text/plain">
+      <label for="name">Your Name</label>
+      <input type="text" id="name" name="Name" required />
 
-      <label for="email">Email</label>
-      <input type="email" id="email" name="email" required>
+      <label for="email">Your Email</label>
+      <input type="email" id="email" name="Email" required />
 
-      <label for="message">Message</label>
-      <textarea id="message" name="message" rows="5" required></textarea>
+      <label for="horse">Horse's Name</label>
+      <input type="text" id="horse" name="Horse Name" required />
 
-      <button type="submit">Send Message</button>
+      <label for="start">Preferred Start Date</label>
+      <input type="date" id="start" name="Start Date" />
+
+      <label for="notes">Additional Notes</label>
+      <textarea id="notes" name="Notes" rows="4" placeholder="Anything else we should know?"></textarea>
+
+      <button type="submit">Send Request</button>
     </form>
-
-    <div class="contact-details">
-     <h3>Our Location</h3>
-      <p><strong>Address:</strong> 75 Barron Rd, Ortonville, MI 48462</p>
-      <p><strong>Phone:</strong> <a href="tel:+12483907083">(248) 390-7083</a></p>
-      <p><strong>Email:</strong> onedreamequine@gmail.com</p>
-      <p><strong>Hours:</strong><br>Open 24 Hours</p>
-
-      <!-- Optional Google Maps -->
-<iframe src="https://www.google.com/maps/embed?pb=!1m23!1m12!1m3!1d93602.13358078634!2d-83.59960330323666!3d42.85032531379639!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m8!3e6!4m0!4m5!1s0x882483715ff0f8b3%3A0xd80eecb1425f1d67!2s75%20Barron%20Rd%2C%20Ortonville%2C%20MI%2048462!3m2!1d42.850229!2d-83.517201!5e0!3m2!1sen!2sus!4v1747239741405!5m2!1sen!2sus" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></div>
   </div>
-</section>
-
+  </section>
+  
+</body>
+</html>
   <div class="barn"></div>
 
   <footer class="footer">

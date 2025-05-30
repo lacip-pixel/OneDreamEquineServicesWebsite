@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Boarding</title>
+  <title>Boarding Contract</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <script>
@@ -53,67 +53,38 @@
   <a href="contact.html">Contact Us</a>
 
 </nav>
+<body>
   <div class="barn"></div>
- <!-- Boarding Section -->
-  <section class="contact-page">
-    <h2>Boarding Services</h2>
-    <p>Interested in boarding your horse with us? Check to see if we have open stalls.</p>
-    <div class="event-link">
-      <a href="#" onclick="checkAvailability()">Check Stall Availability</a>
+
+  <header>
+    <div class="logo">
+      <img src="images/logo.png" alt="One Dream Equine Services Logo" class="logo-img">
     </div>
+  </header>
+
+  <section class="thank-you-section">
+    <h2>Thank You!</h2>
+    <p>Your boarding request has been submitted. We’ll be in touch shortly!</p>
+    <a href="home.html" class="button">Back to Home</a>
   </section>
-    <div class="barn"></div>
-
-<section class="boarding-contract-section">
-  <h2>Boarding Contract</h2>
-        <div class="underline"></div>
-
-  <div class="contract-card">
-    <iframe src="docs/OneDreamBoardingContract-2025.pdf" class="contract-pdf" title="Boarding Contract"></iframe>
-  </div>
-</section>
-
-
-  <!-- Scripts -->
-  <script>
-    function toggleMenu() {
-      const nav = document.querySelector('nav');
-      nav.classList.toggle('mobile-menu-open');
-    }
-
-    const stallsAvailable = true;
-
-    function checkAvailability() {
-      if (stallsAvailable) {
-        window.location.href = "boarding-contract.html";
-      } else {
-        window.location.href = "no-stalls.html";
-      }
-    }
-  </script>
-
-</body>
-</html>
-  <div class="barn"></div>
 
   <footer class="footer">
     <nav class="footer-nav">
-      <a href="home.html">Home</a> 
-      <a href="about.html">About</a> 
-      <a href="offers.html">Sale Offerings</a> 
-      <a href="recentsales.html">Recent Sales</a> 
-      <a href="stallions.html">Stallions</a> 
-      <a href="mares.html">Mares</a> 
-      <a href="foals.html">Foals</a> 
-        <a href="boarding.html">Boarding</a>
-
-      <a href="calander.html">Calendar</a> 
-      <a href="reviews.html">Reviews</a> 
+      <a href="home.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="offers.html">Sale Offerings</a>
+      <a href="recentsales.html">Recent Sales</a>
+      <a href="stallions.html">Stallions</a>
+      <a href="mares.html">Mares</a>
+      <a href="foals.html">Foals</a>
+      <a href="boarding.html">Boarding</a>
+      <a href="calander.html">Calendar</a>
+      <a href="reviews.html">Reviews</a>
       <a href="contact.html">Contact</a>
     </nav>
     <p class="copyright">
       &copy; 2025 One Dream Equine Services. All rights reserved.
     </p>
   </footer>
-
-</body></html>
+</body>
+</html>

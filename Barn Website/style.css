@@ -1,7 +1,7 @@
 :root {
-    --body-bg: #7d7f80;         /* Sage Gray */
-    --header-dark: #1d1230;     /* Deep Plum */
-    --text-main: #f4f1ed;       /* Cream */
+    --body-bg: #A5A5A5;         /* Sage Gray */
+    --header-dark: #37568D;     /* Deep Plum */
+    --text-main: black;       /* Cream */
     --accent-blue: #80a6bb;     /* Sky Blue */
     --accent-blue-light: #aec9d2; /* Light Sky Blue */
 }
@@ -142,8 +142,8 @@ header {
     font-family: 'Segoe UI', sans-serif;
     font-size: 1.2rem;
     text-decoration: none;
-    color: var(--accent-blue);  /* Your Sky Blue */
-    border: 2px solid var(--accent-blue-light);
+    color: white;  /* Your Sky Blue */
+    border: 2px solid var(--header-dark);
     padding: 10px 20px;
     border-radius: 6px;
     background-color: var(--cream);
@@ -151,7 +151,7 @@ header {
 }
 
 .event-link a:hover {
-    background-color: var(--header-dark);
+    background-color: var(--accent-blue);
     color: var(--text-main);
 }
 
@@ -162,7 +162,7 @@ header {
 }
 .logo img,
 .logo-img {
-    max-height: 65px;  /* Adjust size here */
+    max-height: 85px;  /* Adjust size here */
     height: auto;
     width: auto;
     right:100%;
@@ -173,7 +173,7 @@ header {
     display: flex;
     align-items: center;
     justify-content: flex-end;   /* Pushes nav to the right */
-    margin-top: -80px;   /* Adjust this as needed to align with the header */
+    margin-top: -90px;   /* Adjust this as needed to align with the header */
     padding-bottom: 15px;
     gap: 1.0rem;
     background-color: var(--header-dark);
@@ -194,13 +194,13 @@ header {
 }
 
 .main-nav a:hover, .dropdown:hover .dropbtn {
-    background-color: #513679;
+    background-color: #1D1230;
 }
 
 .main-nav a {
     text-decoration: none;
     font-weight: 500;
-    color: var(--text-main);
+    color: white;
 }
 
 /* Dropdown container */
@@ -215,7 +215,7 @@ header {
     position: absolute;
     left: 0;
     top: 100%;
-    background-color: #513679;
+    background-color: #1D1230;
     min-width: 180px;
     box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
     z-index: 1;
@@ -231,11 +231,41 @@ header {
 }
 
 .dropdown-content a:hover {
-    background-color: #513679;
+    background-color: #1D1230;
 }
 
 .dropdown:hover .dropdown-content {
     display: block;
+}
+/* BOARDING CONTRACT SECTION */
+.boarding-contract-section {
+  padding: 2rem;
+  background-color: var(--body-bg); /* Light Sky Blue */
+  text-align: center;
+}
+
+.boarding-contract-section h2 {
+  color: black; /* Deep Plum */
+  font-size: 2.5rem;
+  font-family: 'Merriweather';
+  margin-bottom: 1rem;
+}
+
+.contract-card {
+  background-color: var(--text-main); /* Cream */
+  border-radius: 1.5rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  padding: 1rem;
+  max-width: 900px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.contract-pdf {
+  width: 100%;
+  height: 600px;
+  border: none;
+  border-radius: 1rem;
 }
 
 /* HERO BANNER */
@@ -269,7 +299,7 @@ header {
   padding: 3rem 1rem;
   max-width: 1200px;
   margin: auto;
-  font-family: 'Segoe UI', sans-serif;
+  font-family: 'Merriweather';
 }
 
 .contact-page h2 {
@@ -591,7 +621,7 @@ background-color: #016b8e;
   text-align: center;
   text-decoration: none;
   outline: none;
-  background-color: #1d1230f0;
+  background-color: #37578de7;
   color: whitesmoke;
   border-radius: 15px;
 }
@@ -707,7 +737,7 @@ box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
 /* FOOTER */
 .footer {
     background-color: var(--header-dark);
-    color: var(--text-main);
+    color: white;
     text-align: center;
     padding: 1rem;
     font-size: 0.9rem;
@@ -723,7 +753,7 @@ box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
 
 .footer-nav a {
     text-decoration: none;
-    color: var(--text-main);
+    color: white;
     font-size: 0.9rem;
     font-weight: 400;
     letter-spacing: 0.5px;
