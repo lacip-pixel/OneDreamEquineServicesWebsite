@@ -119,7 +119,6 @@
 
       const damname = form.damname.value;
       const requestdate = form.requestdate.value;
-      const studfee = Number(form.studfee.value);
       const season = form.season.value;
 
       // Look up sire ID from name
@@ -144,7 +143,6 @@
           sireid,
           dam_name: damname,
           requestdate,
-          studfee,
           season,
           status: 'pending'
         }
