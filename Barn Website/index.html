@@ -1,10 +1,149 @@
-<!-- Barn Website/index.html -->
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta http-equiv="refresh" content="0; url=home.html">
-  </head>
-  <body>
-    <p>Redirecting to <a href="home.html">home.html</a></p>
-  </body>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>One Dream Equine Services</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/png" href="images/favicon.png">
+</head>
+<script>
+  function toggleMenu() {
+      const nav = document.querySelector('nav');
+      nav.classList.toggle('mobile-menu-open');
+  }
+  </script>
+  
+  
+<body>
+
+  <div class="barn"></div>
+
+  <header>
+    <div class="logo">
+      <img src="images/logo.png" alt="One Dream Equine Services Logo" class="logo-img">
+    </div>
+    <div class="hamburger" onclick="toggleMenu()">&#9776;</div>
+
+   
+  </header>
+ <nav class="main-nav">
+
+  <a href="index.html">Home</a>
+  <a href="about.html">About</a>
+
+  <div class="dropdown">
+    <a href="#" class="dropbtn">Sales &#9662;</a>
+    <div class="dropdown-content">
+      <a href="offers.html">Sale Offerings</a>
+      <a href="recentsales.html">Recent Sales</a>
+    </div>
+  </div>
+
+  <div class="dropdown">
+    <a href="#" class="dropbtn">Horses &#9662;</a>
+    <div class="dropdown-content">
+      <a href="stallions.html">Stallions</a>
+      <a href="mares.html">Mares</a>
+      <a href="foals.html">Foals</a>
+    </div>
+  </div>
+
+  <a href="boarding.html">Boarding</a>
+
+  <a href="calander.html">Calendar</a>
+  <a href="reviews.html">Reviews</a>
+  <a href="contact.html">Contact Us</a>
+
+</nav>
+
+  <div class="barn"></div>
+
+  <section class="hero-horse-banner">
+  <div class="hero-horse-banner-content">
+    <div class="hero-horse-center">
+      <p class="hero-horse-tagline">Where your dreams run free and your future champions are born.</p>
+    </div>
+    <div class="hero-horse-bottom">
+<a href="boarding.html">
+  <button class="btn">Boarding Inquiry</button>
+</a>
+    </div>
+  </div>
+</section>
+
+
+  <section class="hero">
+  <div class="facebook-banner">
+    <a href="https://www.facebook.com/profile.php?id=100082960977626" target="_blank">
+      <i class="bi bi-facebook"></i>
+      <span>Please visit our Facebook for exclusive content!</span>
+    </a>
+  </div>
+</section>
+
+  <section class="section about">
+    <div class="about-content">
+      <h3>ABOUT ONE DREAM EQUINE SERVICES</h3>
+      <p>
+        One Dream Equine Services is a premier facility dedicated to excellence in horse breeding, training, and boarding. 
+        Our historic white barn, nestled in the countryside, provides a safe and nurturing environment for both horses and riders.
+        We are committed to helping every dream find its stride — from young foals to seasoned champions.
+      </p>
+      <p>
+        Our team brings decades of passion, knowledge, and care to every horse entrusted to us. 
+        Discover a place where your dreams run free and your future champions are born.
+      </p>
+    </div>
+  </section>
+
+  <div class="barn"></div>
+
+  <!-- Bootstrap Icons Link -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+
+  <section class="section contact">
+    <div class="contact-content">
+      <div class="horse-banner">
+        <img src="images/whitehorse.png" alt="Horse Right" class="horse-icon flipped">
+        <h3>One Dream Equine Services</h3>
+        <img src="images/whitehorse.png" alt="Horse Left" class="horse-icon">
+      </div>
+      <div class="underline"></div>
+      
+      <p class="owner">Devin Yeomans</p>
+      <p class="email">onedreamequine@gmail.com</p>
+      <p class="phone">Phone: (248) 390-7083</p>
+      <p class="location">Ortonville, Michigan, United States</p>
+      <p class="hours">Hours: Open 24 Hours</p>
+
+      <div class="social-icons">
+        <a href="https://www.facebook.com/yourpage" target="https://www.facebook.com/profile.php?id=100082960977626"><i class="bi bi-facebook"></i></a>
+      </div>
+    </div>
+  </section>
+
+  <div class="barn"></div>
+
+  <footer class="footer">
+    <nav class="footer-nav">
+      <a href="index.html">Home</a> 
+      <a href="about.html">About</a> 
+      <a href="offers.html">Sale Offerings</a> 
+      <a href="recentsales.html">Recent Sales</a> 
+      <a href="stallions.html">Stallions</a> 
+      <a href="mares.html">Mares</a> 
+      <a href="foals.html">Foals</a> 
+        <a href="boarding.html">Boarding</a>
+
+      <a href="calander.html">Calendar</a> 
+      <a href="reviews.html">Reviews</a> 
+      <a href="contact.html">Contact</a>
+    </nav>
+    <p class="copyright">
+      &copy; 2025 One Dream Equine Services. All rights reserved.
+    </p>
+  </footer>
+
+</body>
 </html>

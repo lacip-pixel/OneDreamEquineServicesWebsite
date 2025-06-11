@@ -1,22 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Horse Details</title>
   <link rel="stylesheet" href="style.css">
   <link rel="icon" type="image/png" href="images/favicon.png">
 </head>
-<script type="module">
-  import { loadHorsesByType } from './js/loadHorsesByType.js';
-  loadHorsesByType('Mare', 'horse-list');
-</script>
-<script>
-  function toggleMenu() {
-        const nav = document.querySelector('nav');
-        nav.classList.toggle('mobile-menu-open');
-    }
-    </script>
 <body>
 
   <div class="barn"></div>
@@ -26,12 +16,10 @@
       <img src="images/logo.png" alt="One Dream Equine Services Logo" class="logo-img">
     </div>
     <div class="hamburger" onclick="toggleMenu()">&#9776;</div>
-
-    
   </header>
+
   <nav class="main-nav">
-        
-    <a href="home.html">Home</a>
+    <a href="index.html">Home</a>
     <a href="about.html">About</a>
 
     <div class="dropdown">
@@ -50,29 +38,29 @@
         <a href="foals.html">Foals</a>
       </div>
     </div>
-  <a href="boarding.html">Boarding</a>
 
+    <a href="boarding.html">Boarding</a>
     <a href="calander.html">Calendar</a>
     <a href="reviews.html">Reviews</a>
     <a href="contact.html">Contact Us</a>
   </nav>
+
   <div class="barn"></div>
-  <h2>Horse Details</h2>
+
   <div id="horse-details"><p>Loading...</p></div>
 
   <div class="barn"></div>
 
   <footer class="footer">
     <nav class="footer-nav">
-      <a href="home.html">Home</a> 
+      <a href="index.html">Home</a> 
       <a href="about.html">About</a> 
       <a href="offers.html">Sale Offerings</a> 
       <a href="recentsales.html">Recent Sales</a> 
       <a href="stallions.html">Stallions</a> 
       <a href="mares.html">Mares</a> 
       <a href="foals.html">Foals</a> 
-        <a href="boarding.html">Boarding</a>
-
+      <a href="boarding.html">Boarding</a>
       <a href="calander.html">Calendar</a> 
       <a href="reviews.html">Reviews</a> 
       <a href="contact.html">Contact</a>
@@ -81,7 +69,15 @@
       &copy; 2025 One Dream Equine Services. All rights reserved.
     </p>
   </footer>
-<script type="module">
+
+  <script>
+    function toggleMenu() {
+      const nav = document.querySelector('nav');
+      nav.classList.toggle('mobile-menu-open');
+    }
+  </script>
+
+  <script type="module">
     import { supabase } from './js/supabaseClient.js';
 
     const params = new URLSearchParams(window.location.search);
@@ -105,37 +101,52 @@
       }
 
       // Fetch sire and dam names
-        let sireName = horse.sire_name || 'Unknown';
-        if (horse.sireid) {
+      let sireName = horse.sire_name || 'Unknown';
+      if (horse.sireid) {
         const { data: sire } = await supabase
-            .from('horse')
-            .select('name')
-            .eq('horseid', horse.sireid)
-            .single();
+          .from('horse')
+          .select('name')
+          .eq('horseid', horse.sireid)
+          .single();
         if (sire) sireName = sire.name;
-        }
+      }
 
-        let damName = horse.dam_name || 'Unknown';
-        if (horse.damid) {
+      let damName = horse.dam_name || 'Unknown';
+      if (horse.damid) {
         const { data: dam } = await supabase
-            .from('horse')
-            .select('name')
-            .eq('horseid', horse.damid)
-            .single();
+          .from('horse')
+          .select('name')
+          .eq('horseid', horse.damid)
+          .single();
         if (dam) damName = dam.name;
-        }
+      }
 
+      const type = (horse.type || '').toLowerCase();
+      const backLink = ['mare', 'stallion', 'foal'].includes(type) ? `${type}s.html` : 'index.html';
 
       document.getElementById('horse-details').innerHTML = `
-        <h3>${horse.name}</h3>
-        ${horse.pictureurl ? `<img src="images/${horse.pictureurl}" alt="${horse.name}" style="max-width:300px;">` : ''}
-        <p><strong>Breed:</strong> ${horse.breed}</p>
-        <p><strong>Sire:</strong> ${sireName}</p>
-        <p><strong>Dam:</strong> ${damName}</p>
-        ${horse.familytree ? `<img src="images/${horse.familytree}" alt="Family Tree of ${horse.name}" style="max-width:100%;">` : '<p><em>No family tree available.</em></p>'}
+        <div class="horse-detail-card">
+          <div class="horse-detail-grid">
+            <div class="horse-main-image">
+              ${horse.pictureurl ? `<img src="images/${horse.pictureurl}" alt="${horse.name}">` : ''}
+            </div>
+            <div class="horse-info">
+              <h2>${horse.name}</h2>
+              <p><strong>Breed:</strong> ${horse.breed}</p>
+              <p><strong>Sire:</strong> ${sireName}</p>
+              <p><strong>Dam:</strong> ${damName}</p>
+            </div>
+          </div>
+          <div class="family-tree">
+            <h3>Family Tree</h3>
+            ${horse.familytree ? `<img src="images/${horse.familytree}" alt="Family Tree of ${horse.name}">` : '<p><em>No family tree available.</em></p>'}
+          </div>
+          <a href="${backLink}" class="back-button">← Back to ${type.charAt(0).toUpperCase() + type.slice(1)}s</a>
+        </div>
       `;
     }
 
     loadHorseDetails();
   </script>
-</body></html>
+</body>
+</html>

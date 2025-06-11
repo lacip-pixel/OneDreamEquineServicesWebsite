@@ -7,12 +7,6 @@
   <link rel="stylesheet" href="style.css">
   <link rel="icon" type="image/png" href="images/favicon.png">
 </head>
-<script>
-    function toggleMenu() {
-        const nav = document.querySelector('nav');
-        nav.classList.toggle('mobile-menu-open');
-    }
-    </script>
 <body>
 
   <div class="barn"></div>
@@ -22,92 +16,68 @@
       <img src="images/logo.png" alt="One Dream Equine Services Logo" class="logo-img">
     </div>
     <div class="hamburger" onclick="toggleMenu()">&#9776;</div>
-
-    
   </header>
+
   <nav class="main-nav">
-
-  <a href="home.html">Home</a>
-  <a href="about.html">About</a>
-
-  <div class="dropdown">
-    <a href="#" class="dropbtn">Sales &#9662;</a>
-    <div class="dropdown-content">
-      <a href="offers.html">Sale Offerings</a>
-      <a href="recentsales.html">Recent Sales</a>
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <div class="dropdown">
+      <a href="#" class="dropbtn">Sales &#9662;</a>
+      <div class="dropdown-content">
+        <a href="offers.html">Sale Offerings</a>
+        <a href="recentsales.html">Recent Sales</a>
+      </div>
     </div>
-  </div>
-
-  <div class="dropdown">
-    <a href="#" class="dropbtn">Horses &#9662;</a>
-    <div class="dropdown-content">
-      <a href="stallions.html">Stallions</a>
-      <a href="mares.html">Mares</a>
-      <a href="foals.html">Foals</a>
+    <div class="dropdown">
+      <a href="#" class="dropbtn">Horses &#9662;</a>
+      <div class="dropdown-content">
+        <a href="stallions.html">Stallions</a>
+        <a href="mares.html">Mares</a>
+        <a href="foals.html">Foals</a>
+      </div>
     </div>
-  </div>
+    <a href="boarding.html">Boarding</a>
+    <a href="calander.html">Calendar</a>
+    <a href="reviews.html">Reviews</a>
+    <a href="contact.html">Contact Us</a>
+  </nav>
 
-  <a href="boarding.html">Boarding</a>
-
-  <a href="calander.html">Calendar</a>
-  <a href="reviews.html">Reviews</a>
-  <a href="contact.html">Contact Us</a>
-
-</nav>
   <div class="barn"></div>
- <!-- Boarding Section -->
+
+  <!-- Boarding Section -->
   <section class="contact-page">
     <h2>Boarding Services</h2>
     <p>Interested in boarding your horse with us? Check to see if we have open stalls.</p>
+    <div id="boarding-status"></div>
     <div class="event-link">
-      <a href="#" onclick="checkAvailability()">Check Stall Availability</a>
+  <a id="boarding-link" href="boarding-contract.html" style="display: none;">Click here to view the contract</a>
+  <a id="waitlist-button" href="waitlist.html" target="_blank" style="display: none;">Join the Waitlist</a>
+</div>
+
+  </section>
+
+  <div class="barn"></div>
+
+  <section class="boarding-contract-section">
+    <h2>Boarding Contract</h2>
+    <div class="underline"></div>
+    <div class="contract-card">
+      <iframe src="docs/OneDreamBoardingContract-2025.pdf" class="contract-pdf" title="Boarding Contract"></iframe>
     </div>
   </section>
-    <div class="barn"></div>
 
-<section class="boarding-contract-section">
-  <h2>Boarding Contract</h2>
-        <div class="underline"></div>
-
-  <div class="contract-card">
-    <iframe src="docs/OneDreamBoardingContract-2025.pdf" class="contract-pdf" title="Boarding Contract"></iframe>
-  </div>
-</section>
-
-
-  <!-- Scripts -->
-  <script>
-    function toggleMenu() {
-      const nav = document.querySelector('nav');
-      nav.classList.toggle('mobile-menu-open');
-    }
-
-    const stallsAvailable = true;
-
-    function checkAvailability() {
-      if (stallsAvailable) {
-        window.location.href = "boarding-contract.html";
-      } else {
-        window.location.href = "no-stalls.html";
-      }
-    }
-  </script>
-
-</body>
-</html>
   <div class="barn"></div>
 
   <footer class="footer">
     <nav class="footer-nav">
-      <a href="home.html">Home</a> 
+      <a href="index.html">Home</a> 
       <a href="about.html">About</a> 
       <a href="offers.html">Sale Offerings</a> 
       <a href="recentsales.html">Recent Sales</a> 
       <a href="stallions.html">Stallions</a> 
       <a href="mares.html">Mares</a> 
       <a href="foals.html">Foals</a> 
-        <a href="boarding.html">Boarding</a>
-
+      <a href="boarding.html">Boarding</a>
       <a href="calander.html">Calendar</a> 
       <a href="reviews.html">Reviews</a> 
       <a href="contact.html">Contact</a>
@@ -117,4 +87,20 @@
     </p>
   </footer>
 
-</body></html>
+  <!-- JS MODULES -->
+  <script type="module">
+    import { loadBoardingStatus } from './js/loadBoardingStatus.js';
+
+    loadBoardingStatus('boarding-status', 'boarding-link-container');
+  </script>
+
+  <!-- TOGGLE MENU -->
+  <script>
+    function toggleMenu() {
+      const nav = document.querySelector('nav');
+      nav.classList.toggle('mobile-menu-open');
+    }
+  </script>
+
+</body>
+</html>
