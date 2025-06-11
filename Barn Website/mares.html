@@ -7,8 +7,12 @@
   <link rel="stylesheet" href="style.css">
   <link rel="icon" type="image/png" href="images/favicon.png">
 </head>
+<script type="module">
+  import { loadHorsesByType } from './js/loadHorsesByType.js';
+  loadHorsesByType('Mare', 'horse-list');
+</script>
 <script>
-    function toggleMenu() {
+  function toggleMenu() {
         const nav = document.querySelector('nav');
         nav.classList.toggle('mobile-menu-open');
     }
@@ -53,6 +57,8 @@
     <a href="contact.html">Contact Us</a>
   </nav>
   <div class="barn"></div>
+  <h2>Mares</h2>
+  <div id="horse-list"></div>
   <div class="barn"></div>
 
   <footer class="footer">

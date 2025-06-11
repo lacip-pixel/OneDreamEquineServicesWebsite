@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>One Dream Equine Services</title>
+  <title>Sale Offerings</title>
   <link rel="stylesheet" href="style.css">
   <link rel="icon" type="image/png" href="images/favicon.png">
 </head>
@@ -53,6 +53,8 @@
     <a href="contact.html">Contact Us</a>
   </nav>
   <div class="barn"></div>
+ <h2>Horses for Sale</h2>
+  <div id="horse-sale-list"><p>Loading...</p></div>
   <div class="barn"></div>
 
   <footer class="footer">
@@ -74,5 +76,8 @@
       &copy; 2025 One Dream Equine Services. All rights reserved.
     </p>
   </footer>
-
+ <script type="module">
+    import { loadSaleHorses } from './js/loadSaleHorses.js';
+    loadSaleHorses('horse-sale-list', false); // false = not yet sold
+  </script>
 </body></html>

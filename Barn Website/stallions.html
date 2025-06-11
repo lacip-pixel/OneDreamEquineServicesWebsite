@@ -7,6 +7,7 @@
   <link rel="stylesheet" href="style.css">
   <link rel="icon" type="image/png" href="images/favicon.png">
 </head>
+
 <script>
     function toggleMenu() {
         const nav = document.querySelector('nav');
@@ -53,6 +54,8 @@
     <a href="contact.html">Contact Us</a>
   </nav>
   <div class="barn"></div>
+   <h2>Stallions</h2>
+  <div id="horse-list"></div>
   <div class="barn"></div>
 
   <footer class="footer">
@@ -73,5 +76,8 @@
       &copy; 2025 One Dream Equine Services. All rights reserved.
     </p>
   </footer>
-
+<script type="module">
+  import { loadHorsesByType } from './js/loadHorsesByType.js';
+  loadHorsesByType('Stallion', 'horse-list');
+</script>
 </body></html>

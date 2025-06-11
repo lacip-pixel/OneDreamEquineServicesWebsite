@@ -3,16 +3,16 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>One Dream Equine Services</title>
+  <title>Horse Details</title>
   <link rel="stylesheet" href="style.css">
   <link rel="icon" type="image/png" href="images/favicon.png">
 </head>
 <script type="module">
   import { loadHorsesByType } from './js/loadHorsesByType.js';
-  loadHorsesByType('Foal', 'horse-list');
+  loadHorsesByType('Mare', 'horse-list');
 </script>
 <script>
-    function toggleMenu() {
+  function toggleMenu() {
         const nav = document.querySelector('nav');
         nav.classList.toggle('mobile-menu-open');
     }
@@ -57,8 +57,9 @@
     <a href="contact.html">Contact Us</a>
   </nav>
   <div class="barn"></div>
-  <h2>Foals</h2>
-  <div id="horse-list"></div>
+  <h2>Horse Details</h2>
+  <div id="horse-details"><p>Loading...</p></div>
+
   <div class="barn"></div>
 
   <footer class="footer">
@@ -80,5 +81,61 @@
       &copy; 2025 One Dream Equine Services. All rights reserved.
     </p>
   </footer>
+<script type="module">
+    import { supabase } from './js/supabaseClient.js';
 
+    const params = new URLSearchParams(window.location.search);
+    const horseId = params.get('id');
+
+    async function loadHorseDetails() {
+      if (!horseId) {
+        document.getElementById('horse-details').innerText = "No horse ID provided.";
+        return;
+      }
+
+      const { data: horse, error } = await supabase
+        .from('horse')
+        .select('*')
+        .eq('horseid', horseId)
+        .single();
+
+      if (error || !horse) {
+        document.getElementById('horse-details').innerText = "Horse not found.";
+        return;
+      }
+
+      // Fetch sire and dam names
+        let sireName = horse.sire_name || 'Unknown';
+        if (horse.sireid) {
+        const { data: sire } = await supabase
+            .from('horse')
+            .select('name')
+            .eq('horseid', horse.sireid)
+            .single();
+        if (sire) sireName = sire.name;
+        }
+
+        let damName = horse.dam_name || 'Unknown';
+        if (horse.damid) {
+        const { data: dam } = await supabase
+            .from('horse')
+            .select('name')
+            .eq('horseid', horse.damid)
+            .single();
+        if (dam) damName = dam.name;
+        }
+
+
+      document.getElementById('horse-details').innerHTML = `
+        <h3>${horse.name}</h3>
+        ${horse.pictureurl ? `<img src="images/${horse.pictureurl}" alt="${horse.name}" style="max-width:300px;">` : ''}
+        <p><strong>Breed:</strong> ${horse.breed}</p>
+        <p><strong>Sire:</strong> ${sireName}</p>
+        <p><strong>Dam:</strong> ${damName}</p>
+        ${horse.familytree ? `<img src="images/${horse.familytree}" alt="Family Tree of ${horse.name}" style="max-width:100%;">` : '<p><em>No family tree available.</em></p>'}
+      `;
+    }
+
+    loadHorseDetails();
+  </script>
 </body></html>

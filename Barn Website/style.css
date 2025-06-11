@@ -581,6 +581,33 @@ background-color: #016b8e;
   text-decoration: none;
   font-weight: bold;
 }
+.horse-card {
+  border: 1px solid #ccc;
+  margin: 1rem;
+  padding: 1rem;
+  border-radius: 8px;
+  background: #fefefe;
+  max-width: 300px;
+}
+.horse-card img {
+  width: 100%;
+  height: auto;
+  border-radius: 4px;
+}
+
+.horse-card button {
+  margin-top: 0.5rem;
+  padding: 0.5rem 1rem;
+  background-color: #5a7894;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.horse-card button:hover {
+  background-color: #3f5b6d;
+}
+
 
 .facebook-banner i {
   font-size: 3rem;
