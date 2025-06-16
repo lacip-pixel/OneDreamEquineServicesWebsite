@@ -74,8 +74,15 @@
   function toggleMenu() {
     const nav = document.querySelector('.main-nav');
     const hamburger = document.querySelector('.hamburger');
+
     nav.classList.toggle('mobile-menu-open');
-    hamburger.classList.toggle('open');
+
+    // Update the icon directly
+    if (nav.classList.contains('mobile-menu-open')) {
+      hamburger.textContent = '✖';  // change to X
+    } else {
+      hamburger.textContent = '☰';  // change back to bars
+    }
   }
 </script>
 

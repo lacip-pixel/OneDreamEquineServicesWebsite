@@ -1026,13 +1026,14 @@ box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
 /* HAMBURGER MENU STYLES */
 
 .hamburger {
-    display: none;
-    font-size: 26px;
-    color: white;
-    cursor: pointer;
-    padding: 14px 16px;
-    padding-right: 50px;  
+  display: block;
+  font-size: 2rem;
+  color: white;
+  cursor: pointer;
+  z-index: 1001; /* must be higher than nav */
+  position: relative; /* required for z-index to work */
 }
+
 
 /* MOBILE STYLES */
 @media screen and (max-width: 600px) {
@@ -1054,9 +1055,7 @@ box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
         text-align: center;
         z-index: 999;
     }
-    .hamburger.open::before {
-        content: '✖'; /* Unicode X icon */
-    }
+   
     /* When hamburger is clicked, menu opens vertically */
     .main-nav.mobile-menu-open {
         display: flex;

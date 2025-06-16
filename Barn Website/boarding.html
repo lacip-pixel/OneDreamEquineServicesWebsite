@@ -62,7 +62,11 @@
     <h2>Boarding Contract</h2>
     <div class="underline"></div>
     <div class="contract-card">
-      <iframe src="docs/OneDreamBoardingContract-2025.pdf" class="contract-pdf" title="Boarding Contract"></iframe>
+        <iframe
+      src="docs/OneDreamBoardingContract-2025.pdf"
+      class="contract-frame"
+      allowfullscreen
+    ></iframe>
       <a href="docs/OneDreamBoardingContract-2025.pdf" download class="download-btn">Download Full Contract</a>
     </div>
   </section>
@@ -100,8 +104,15 @@
   function toggleMenu() {
     const nav = document.querySelector('.main-nav');
     const hamburger = document.querySelector('.hamburger');
+
     nav.classList.toggle('mobile-menu-open');
-    hamburger.classList.toggle('open');
+
+    // Update the icon directly
+    if (nav.classList.contains('mobile-menu-open')) {
+      hamburger.textContent = '✖';  // change to X
+    } else {
+      hamburger.textContent = '☰';  // change back to bars
+    }
   }
 </script>
 
