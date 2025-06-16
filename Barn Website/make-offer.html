@@ -1,16 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mares</title>
-  <link rel="stylesheet" href="style.css">
-  <link rel="icon" type="image/png" href="images/favicon.png">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Make an Offer</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
-<script type="module">
-  import { loadHorsesByType } from './js/loadHorsesByType.js';
-  loadHorsesByType('Mare', 'horse-list');
-</script>
 <script>
   function toggleMenu() {
     const nav = document.querySelector('.main-nav');
@@ -29,14 +24,11 @@
       <img src="images/logo.png" alt="One Dream Equine Services Logo" class="logo-img">
     </div>
     <div class="hamburger" onclick="toggleMenu()">&#9776;</div>
-
-    
   </header>
+
   <nav class="main-nav">
-        
     <a href="index.html">Home</a>
     <a href="about.html">About</a>
-
     <div class="dropdown">
       <a href="#" class="dropbtn">Sales &#9662;</a>
       <div class="dropdown-content">
@@ -44,7 +36,6 @@
         <a href="recentsales.html">Recent Sales</a>
       </div>
     </div>
-
     <div class="dropdown">
       <a href="#" class="dropbtn">Horses &#9662;</a>
       <div class="dropdown-content">
@@ -53,15 +44,41 @@
         <a href="foals.html">Foals</a>
       </div>
     </div>
-  <a href="boarding.html">Boarding</a>
-
+    <a href="boarding.html">Boarding</a>
     <a href="calander.html">Calendar</a>
     <a href="reviews.html">Reviews</a>
     <a href="contact.html">Contact Us</a>
   </nav>
+
   <div class="barn"></div>
-  <h2>Mares</h2>
-  <div id="horse-list"></div>
+
+  <!-- Make Offer Form -->
+  <section class="contact-page">
+    <h2>Make an Offer</h2>
+    <p>Interested in purchasing a horse? Submit your offer below.</p>
+
+    <div class="form-wrapper">
+      <form action="https://formsubmit.co/onedreamequine@gmail.com" method="POST" class="contact-form">
+        <input type="hidden" name="_next" value="thank-you.html">
+        <input type="hidden" name="horseid" id="horse-id" value="">
+
+        <label for="name">Your Name:</label>
+        <input type="text" name="name" required>
+
+        <label for="email">Your Email:</label>
+        <input type="email" name="email" required>
+
+        <label for="offer">Offer Amount (USD):</label>
+        <input type="number" name="offer" required>
+
+        <label for="message">Optional Message:</label>
+        <textarea name="message" rows="4" placeholder="Include any additional information..."></textarea>
+
+        <button type="submit">Submit Offer</button>
+      </form>
+    </div>
+  </section>
+
   <div class="barn"></div>
 
   <footer class="footer">
@@ -73,8 +90,7 @@
       <a href="stallions.html">Stallions</a> 
       <a href="mares.html">Mares</a> 
       <a href="foals.html">Foals</a> 
-        <a href="boarding.html">Boarding</a>
-
+      <a href="boarding.html">Boarding</a>
       <a href="calander.html">Calendar</a> 
       <a href="reviews.html">Reviews</a> 
       <a href="contact.html">Contact</a>
@@ -84,4 +100,13 @@
     </p>
   </footer>
 
-</body></html>
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const horseId = params.get('horseid');
+    if (horseId) {
+      document.getElementById('horse-id').value = decodeURIComponent(horseId);
+    }
+  </script>
+
+</body>
+</html>

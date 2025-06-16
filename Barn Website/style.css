@@ -281,6 +281,12 @@ header {
 .hero h4 {
     font-size: 2rem;
 }
+iframe, embed {
+  width: 100%;
+  height: 100vh;  /* or a fixed px if preferred */
+  border: none;
+}
+
 /* === Horse Detail Page Styles === */
 .horse-text h2 {
   text-align: left;
@@ -1006,6 +1012,17 @@ box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
     margin-top: 0.5rem;
     font-size: 0.8rem;
 }
+.download-btn {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 0.5rem 1rem;
+  background-color: var(--accent-blue);
+  color: var(--text-main);
+  text-decoration: none;
+  border-radius: 5px;
+  text-align: center;
+}
+
 /* HAMBURGER MENU STYLES */
 
 .hamburger {
@@ -1035,12 +1052,16 @@ box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
         gap: 1rem;
         padding: 1rem 0;
         text-align: center;
+        z-index: 999;
     }
-
+    .hamburger.open::before {
+        content: '✖'; /* Unicode X icon */
+    }
     /* When hamburger is clicked, menu opens vertically */
     .main-nav.mobile-menu-open {
         display: flex;
     }
+    
 
     .main-nav a, .dropbtn {
         width: 100%;
